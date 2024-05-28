@@ -19,3 +19,12 @@ Preparation course for Databricks Data Engineer Associate certification exam wit
 | Control plan | Data plane |
 ----------- | ----------- | 
  |<li> Notebook </li> <li> Workflow </li> <li> Cluster managment </li> <li> Web UI </li>  | <li> Cluster VMs </li>  <li> DBFS </li>| 
+
+ ### Cluster
+ It's a set of computeur organized by driver and workers. Driver is the one who will orchestrate the jobs, transformation and storage amoung workers.
+ In compute configuration in databricks, we can specify:
+ * number of node (worker)
+ * Running time version + option using photon (a compute vector create in C++ to improve runtime performance)
+ * Type of node
+ * terminate time when the cluster is terminate automaticly 
+ 
