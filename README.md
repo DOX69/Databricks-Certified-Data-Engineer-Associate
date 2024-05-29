@@ -34,4 +34,9 @@ Preparation course for Databricks Data Engineer Associate certification exam wit
 It's the coding environment where we collaborate. 
 Multiple language thanks to magic command %. We can also use %run to run an other notebook. We also have %fs to deal with file system operation. Ex : `%fs ls '/databricks-datasets'`
 
-Other option to explore and interact with file (and more), we have `dbutils.help()` .A module provide various utilities. We prefere to use this because it can be a part of python code
+Other option to explore and interact with file (and more), we have `dbutils.help()` .A module provide various utilities. We prefere to use this because it can be a part of python code.
+
+### delta lake
+it's an open source storage framework that brings reliability to data lakes(data inconsistency and performance issues. Enabling build lakehouse. Perform ACID
+
+We have **transaction log or delta log**. A single source of truth. To get the version, commit
