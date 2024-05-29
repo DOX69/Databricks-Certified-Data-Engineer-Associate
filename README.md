@@ -39,4 +39,8 @@ Other option to explore and interact with file (and more), we have `dbutils.help
 ### delta lake
 it's an open source storage framework that brings reliability to data lakes(data inconsistency and performance issues. Enabling build lakehouse. Perform ACID
 
-We have **transaction log or delta log**. A single source of truth. To get the version, commit
+We have **transaction log or delta log**. A single source of truth. To get the version, commit etc.
+Advance featured : 
+* Time travel : version > `VERSION AS OF` or table_name`@v`version_number or `TIMESTAMP AS OF` ; rollback > RESTORE TABLE table_name TO VERSION AS OF/TO TIMESTAMP AS OF
+* Compaction : OPTIMIZE + ZORDER BY (data skipping)
+* Vacuum : VACUUM table_name [retention period] . Definitly delete files older than a threshold (no time travel). Delfault is 7 days
