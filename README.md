@@ -51,6 +51,7 @@ Advance featured :
 <p align="center" >
  <img src="Assets/ZORDER BY.png" alt="image" height=200 >
 </p>
+
 * Vacuum : VACUUM table_name [retention period] . Definitly delete files older than a threshold (no time travel). Delfault is 7 days
 
 ### Relational entities
