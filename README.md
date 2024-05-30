@@ -48,6 +48,9 @@ We have **transaction log or delta log**. A single source of truth. To get the v
 Advance featured : 
 * Time travel : version > `VERSION AS OF` or table_name`@v`version_number or `TIMESTAMP AS OF` ; rollback > RESTORE TABLE table_name TO VERSION AS OF/TO TIMESTAMP AS OF
 * Compaction : OPTIMIZE + ZORDER BY (data skipping)
+<p align="center" >
+ <img src="Assets/ZORDER BY.png" alt="image" height=200 >
+</p>
 * Vacuum : VACUUM table_name [retention period] . Definitly delete files older than a threshold (no time travel). Delfault is 7 days
 
 ### Relational entities
