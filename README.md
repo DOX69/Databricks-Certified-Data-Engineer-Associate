@@ -36,11 +36,25 @@ Multiple language thanks to magic command %. We can also use %run to run an othe
 
 Other option to explore and interact with file (and more), we have `dbutils.help()` .A module provide various utilities. We prefere to use this because it can be a part of python code.
 
-### delta lake
+-------------------
+
+## Databricks lakehouse plateform
+
+### Delta lake
 it's an open source storage framework that brings reliability to data lakes(data inconsistency and performance issues. Enabling build lakehouse. Perform ACID
+
 
 We have **transaction log or delta log**. A single source of truth. To get the version, commit etc.
 Advance featured : 
 * Time travel : version > `VERSION AS OF` or table_name`@v`version_number or `TIMESTAMP AS OF` ; rollback > RESTORE TABLE table_name TO VERSION AS OF/TO TIMESTAMP AS OF
 * Compaction : OPTIMIZE + ZORDER BY (data skipping)
 * Vacuum : VACUUM table_name [retention period] . Definitly delete files older than a threshold (no time travel). Delfault is 7 days
+
+### Relational entities
+Database = schema in Hive metastore: `CREATE DATABASE|SCHEMA db_name` 
+**Hive metastore** :repository of metadata that stores information for data structure, such as databases,tables and partitions,metadata, the format of the delta and where this data is actually stored in the underlying storage.
+
+Depend on the location of the underline storage, we have 2 type table
+| `Managed table` | `External table` |
+----------- | ----------- | 
+ |<li> Create in the storage under db directory of dbx </li> <li> Drop table drop the underline data </li>  | <li> underline data created outsite dbx</li>  <li> `CREATE TABLE table_name LOCATION 'path'` </li> <li> drop table will **NOT** drop underline data</li>| 
