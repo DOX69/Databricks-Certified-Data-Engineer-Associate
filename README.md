@@ -96,3 +96,10 @@ Constraints fall into two categories:
   ### CLONE
   * **DEEP CLONE** `CREATE TABLE table_cloned DEEP CLONE source_table` during cloning syncronize changes from the target to the source,and copy all data, can take a while
   * **SHALLOW CLONE** only clone transaction log and don't infer changed, **not data moving during shallow clone**
+ 
+  ### View
+  Not the data but just a query
+  * (Stored) VIEW
+  * TEMP VIEW : persiste during spark session
+    > When as spark session is created in DBX ? Opening a new note book, attaching or detaching a cluster to a notebook, install package, restart cluster
+  * GLOBAL VIEW : cluster scope view. You need to specify **global_temp** `SELECT * FROM global_temp.view_name`
