@@ -62,3 +62,35 @@ Depend on the location of the underline storage, we have 2 type table
 | `Managed table` | `External table` |
 ----------- | ----------- | 
  |<li> Create in the storage under db directory of dbx </li> <li> Drop table drop the underline data </li>  | <li> underline data created outsite dbx</li>  <li> `CREATE TABLE table_name LOCATION 'path'` </li> <li> drop table will **NOT** drop underline data</li>| 
+
+ ### CTAS
+```
+CREATE TABLE table_new
+COMMENT 'this is a comment'
+PARTITION BY (city,birth_date) --for data skipping -- not usable for a small data
+LOCATION '/some/path' -- if external
+AS select * from table_from
+```
+### CONSTRAINTS
+Constraints fall into two categories:
+* Enforced contraints ensure that the quality and integrity of data added to a table is automatically verified.
+  Specify with ALTER COLUMN to drop or add NOT NULL constraints
+  ```
+  ALTER TABLE people10m ALTER COLUMN middleName DROP NOT NULL;
+  ALTER TABLE people10m ALTER COLUMN ssn SET NOT NULL;
+  ```
+  We can also add constraint, name it, with a condition, or drop it
+  ```
+  ALTER TABLE table_name ADD CONSTRAINT dateWithinRange CHECK (birthDate > '1900-01-01');
+  ALTER TABLE table_name DROP CONSTRAINT dateWithinRange;
+  ```
+
+* Informational primary key and foreign key constraints encode relationships between fields in tables and are not enforced.
+  ```
+  CREATE TABLE T(pk1 INTEGER NOT NULL, pk2 INTEGER NOT NULL,
+                CONSTRAINT t_pk PRIMARY KEY(pk1, pk2));
+  CREATE TABLE S(pk INTEGER NOT NULL PRIMARY KEY,
+                fk1 INTEGER, fk2 INTEGER,
+                CONSTRAINT s_t_fk FOREIGN KEY(fk1, fk2) REFERENCES T);
+  ``` 
+  
