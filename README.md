@@ -103,3 +103,6 @@ Constraints fall into two categories:
   * TEMP VIEW : persiste during spark session
     > When as spark session is created in DBX ? Opening a new note book, attaching or detaching a cluster to a notebook, install package, restart cluster
   * GLOBAL VIEW : cluster scope view. You need to specify **global_temp** `SELECT * FROM global_temp.view_name`
+    <p align="center" >
+     <img src="Assets/view comparision.png" alt="image" height=200 >
+    </p>
