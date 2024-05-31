@@ -93,4 +93,6 @@ Constraints fall into two categories:
                 fk1 INTEGER, fk2 INTEGER,
                 CONSTRAINT s_t_fk FOREIGN KEY(fk1, fk2) REFERENCES T);
   ``` 
-  
+  ### CLONE
+  * **DEEP CLONE** `CREATE TABLE table_cloned DEEP CLONE source_table` during cloning syncronize changes from the target to the source,and copy all data, can take a while
+  * **SHALLOW CLONE** only clone transaction log and don't infer changed, **not data moving during shallow clone**
