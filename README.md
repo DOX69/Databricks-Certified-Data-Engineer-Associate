@@ -127,6 +127,10 @@ USING data_source
 OPTIONS (key1 = val1, key2 = val2, ...)
 LOCATION = path
 ```
+<p align="center" class="heading-element" dir="auto">
+<td> CSV example : <img src="Assets/CT CSV example.png" alt="image" height=200 ></td>
+<td> JDBC example :<img src="Assets/CT JDBC example.png" alt="image" height=200 ></td>
+</p>
+ 
 ***Table with external data source is NOT a delta table*** 
-
 
