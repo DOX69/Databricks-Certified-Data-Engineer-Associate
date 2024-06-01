@@ -109,18 +109,21 @@ Constraints fall into two categories:
 
 ## ETL with Spark SQL and Python
 ### Query files 
+
 ```
 SELECT * FROM file_format.`some/path`
 --Can be JSON, TXT, CSV , TSV, parquet
 ```
-Use CTAS statement to **create a delta table** 
-```
-CREATE TABLE table_name AS
-SELECT * FROM file_format.`some/path`
-```
-**Limitation** : do not support file options;  CTAS do not support manual schema declaration
 
-**One solution  for manual declaration schema*** : CT USING OPTIONS LOCATION (external table) =>**Non-Delta table** + ***no data moving because external**
+2 Challenges : we want to query files (using Spark SQL) and **manualy define our schema** and create **delta table** . To overcome this,
+* And CT USNG OPTION LOCATION (CT UOLO) to define schema
+* We have CTAS that can create a delta table
+  
+=> we combine this with view so we have the benefits of each solutions
+
+1) CT UOLO to define schema
+
+**One solution  for manual declaration schema*** : CT USING OPTIONS LOCATION (external table) =>**Non-Delta table** + ***no data moving because external** BUT we can manualy declare schema
 ```
 CREATE TABLE table_name
 USING source_format
@@ -134,7 +137,17 @@ LOCATION = path
  
 ***Table with external data source is NOT a delta table*** 
 
-**Other solution* is to combine the two previous technique and use temp view
+2) Use CTAS statement to **create a delta table** 
+
+```
+CREATE TABLE table_name AS
+SELECT * FROM file_format.`some/path`
+```
+
+**Limitation** : do not support file options;  CTAS do not support manual schema declaration
+
+
+**==>> Final solution** is to combine the two previous technique and use temp view
 
 ```
 CREATE TEMP TABLE temp_view_name (col_name1 col_type1, ... )
