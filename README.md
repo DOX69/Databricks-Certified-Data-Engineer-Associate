@@ -115,9 +115,9 @@ SELECT * FROM file_format.`some/path`
 --Can be JSON, TXT, CSV , TSV, parquet
 ```
 
-2 Challenges : we want to query files (using Spark SQL) and **manualy define our schema** and create **delta table** . To overcome this,
-* And CT USNG OPTION LOCATION (CT UOLO) to define schema
-* We have CTAS that can create a delta table
+ ✌️Challenges : we want to query files (using Spark SQL) and **manualy define our schema** and create **delta table** . To overcome this,
+* CT USNG OPTION LOCATION (CT UOLO) to define schema
+* And We have CTAS that can create a delta table
   
 => we combine this with view so we have the benefits of each solutions
 
@@ -147,7 +147,7 @@ SELECT * FROM file_format.`some/path`
 **Limitation** : do not support file options;  CTAS do not support manual schema declaration
 
 
-**==>> Final solution** is to combine the two previous technique and use temp view
+**==>> Combine solutions with view** is to combine the two previous technique and use temp view
 
 ```
 CREATE TEMP TABLE temp_view_name (col_name1 col_type1, ... )
