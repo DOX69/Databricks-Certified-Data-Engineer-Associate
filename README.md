@@ -106,3 +106,27 @@ Constraints fall into two categories:
     <p align="center" >
      <img src="Assets/view comparision.png" alt="image" height=200 >
     </p>
+
+## ETL with Spark SQL and Python
+### Query files 
+```
+SELECT * FROM file_format.`some/path`
+--Can be JSON, TXT, CSV , TSV, parquet
+```
+Use CTAS statement to **create a delta table** 
+```
+CREATE TABLE table_name AS
+SELECT * FROM file_format.`some/path`
+```
+**Limitation** : do not support file options;  CTAS do not support manual schema declaration
+
+**Solution** : CT USING OPTIONS LOCATION (external table) =>**Non-Delta table**
+```
+CREATE TABLE table_name
+USING data_source
+OPTIONS (key1 = val1, key2 = val2, ...)
+LOCATION = path
+```
+***Table with external data source is NOT a delta table*** 
+
+
