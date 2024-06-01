@@ -1,6 +1,6 @@
 # Databricks-Certified-Data-Engineer-Associate-Preparation
 Preparation course for Databricks Data Engineer Associate certification exam with hands-on training
-## Introduction
+## I. Introduction
 ***What is databricks ?*** It's a lakehouse plateteform base on Apache Spark. Here is the architecture of databricks lakehouse:
 
 <h3 align="center" class="heading-element" dir="auto">
@@ -38,7 +38,7 @@ Other option to explore and interact with file (and more), we have `dbutils.help
 
 -------------------
 
-## Databricks lakehouse plateform
+## II. Databricks lakehouse plateform
 
 ### Delta lake
 it's an open source storage framework that brings reliability to data lakes(data inconsistency and performance issues. Enabling build lakehouse. Perform ACID
@@ -107,7 +107,7 @@ Constraints fall into two categories:
      <img src="Assets/view comparision.png" alt="image" height=200 >
     </p>
 
-## ETL with Spark SQL and Python
+## III. ETL with Spark SQL and Python
 ### Query files 
 
 ```
