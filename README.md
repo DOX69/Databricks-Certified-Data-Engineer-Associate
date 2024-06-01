@@ -120,10 +120,10 @@ SELECT * FROM file_format.`some/path`
 ```
 **Limitation** : do not support file options;  CTAS do not support manual schema declaration
 
-**One solution** : CT USING OPTIONS LOCATION (external table) =>**Non-Delta table**
+**One solution** : CT USING OPTIONS LOCATION (external table) =>**Non-Delta table** + ***no data moving because external**
 ```
 CREATE TABLE table_name
-USING data_source
+USING source_format
 OPTIONS (key1 = val1, key2 = val2, ...)
 LOCATION = path
 ```
@@ -138,7 +138,7 @@ LOCATION = path
 
 ```
 CREATE TEMP TABLE temp_view_name (col_name1 col_type1, ... )
-USING data_source
+USING source_format
 OPTIONS (key2 = val1, key2 = val2 ...) ;
 
 --we've created a temporary view. Now let's use it to create a delta table using CTAS
