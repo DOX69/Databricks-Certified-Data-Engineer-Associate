@@ -137,7 +137,7 @@ LOCATION = path
  
 ***Table with external data source is NOT a delta table*** 
 
-2) Use CTAS statement to **create a delta table** 
+2) Use CTAS statement to **create a (managed) delta table** 
 
 ```
 CREATE TABLE table_name AS
