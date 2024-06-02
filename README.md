@@ -254,3 +254,25 @@ It's any data source that grows over time from a new landing files in cloud stor
    <img src="Assets/input streaming table.png" height="250">
    </p>
 
+   **Trigger Intervals** `.trigger({options})` ,which is 500ms by default
+<p align="center">
+   <img src="Assets/trigger Intervals.png" height="200">
+   </p>
+
+   **OutputMode** 
+   * OutputMode("Append"), to append only new rows
+   * OutputMode(""complete", recalculated results each time a write is triggered, so the
+     target table is overwritten with each batch.
+
+   **option("CheckpointLocation","/path"** Databricks creates checkpoints by storing the current state of
+   streaming job to cloud storage
+
+   One checkpoint for one stream
+
+   **Unsupported Operations**:
+   * Sorting operations
+   * Deduplications
+
+   **Advanced methods**
+   * windowing
+   * watermarking
