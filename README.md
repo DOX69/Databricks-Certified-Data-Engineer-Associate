@@ -241,4 +241,16 @@ Filter an array using a given lambda function
   ```
 Ex : `rgoodier7m@skype.com` =>  `https://www.skype.com`
 
-## IV. 
+## IV. Incremental Data Processing
+
+### Structured Streaming
+It's any data source that grows over time from a new landing files in cloud storage, a database captured in a Change Data Capture (CDC) or events queued in pub/sub messaging feed like kafka
+
+2 Approaches for processing :
+* Reprocess all teh dataset eache time
+* add last update >> Spark Structured Streaming : automaticaly identify new data
+  A new row append to a table, that can be triggerd every min for ex
+  <p align="center">
+   <img src="Assets/input streaming table.png">
+   </p>
+
