@@ -30,7 +30,7 @@ Preparation course for Databricks Data Engineer Associate certification exam wit
  * Type of node
  * terminate time when the cluster is terminate automaticly 
  
-### Notebooks
+### [Notebooks](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/1%20Databricks%20lakehouse%20plateform/1.1%20Notebook%20Basics.py)
 It's the coding environment where we collaborate. 
 Multiple language thanks to magic command %. We can also use %run to run an other notebook. We also have %fs to deal with file system operation. Ex : `%fs ls '/databricks-datasets'`
 
@@ -40,7 +40,7 @@ Other option to explore and interact with file (and more), we have `dbutils.help
 
 ## II. Databricks lakehouse plateform
 
-### Delta lake
+### [Delta lake](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/1%20Databricks%20lakehouse%20plateform/1.2%20Understand%20delta%20lake.sql) [(And advance)](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/1%20Databricks%20lakehouse%20plateform/1.3%20Advanced%20Delta%20Lake%20Features.sql)
 it's an open source storage framework that brings reliability to data lakes(data inconsistency and performance issues. Enabling build lakehouse. Perform ACID
 
 
@@ -63,7 +63,7 @@ Depend on the location of the underline storage, we have 2 type table
 ----------- | ----------- | 
  |<li> Create in the storage under db directory of dbx </li> <li> Drop table drop the underline data </li>  | <li> underline data created outsite dbx</li>  <li> `CREATE TABLE table_name LOCATION 'path'` </li> <li> drop table will **NOT** drop underline data</li>| 
 
- ### CTAS
+ ### [CTAS](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/1%20Databricks%20lakehouse%20plateform/1.4%20Databases%20and%20Tables%20on%20Databricks.sql)
 ```
 CREATE TABLE table_new
 COMMENT 'this is a comment'
@@ -97,18 +97,19 @@ Constraints fall into two categories:
   * **DEEP CLONE** `CREATE TABLE table_cloned DEEP CLONE source_table` during cloning syncronize changes from the target to the source,and copy all data, can take a while
   * **SHALLOW CLONE** only clone transaction log and don't infer changed, **not data moving during shallow clone**
  
-  ### View
+  ### [View](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/1%20Databricks%20lakehouse%20plateform/1.5A%20Views.sql)
   Not the data but just a query
   * (Stored) VIEW
-  * TEMP VIEW : persiste during spark session
+  * TEMP VIEW : persiste during [spark session](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/1%20Databricks%20lakehouse%20plateform/1.5B%20Views%20(Session%202).sql)
     > When as spark session is created in DBX ? Opening a new note book, attaching or detaching a cluster to a notebook, install package, restart cluster
   * GLOBAL VIEW : cluster scope view. You need to specify **global_temp** `SELECT * FROM global_temp.view_name`
     <p align="center" >
      <img src="Assets/view comparision.png" alt="image" height=200 >
     </p>
+  
 
 ## III. ETL with Spark SQL and Python
-### Query files 
+### [Query files](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/2%20ETL%20with%20Spark%20SQL%20and%20Python/2.1%20Querying%20Files.sql) 
 
 ```
 SELECT * FROM file_format.`some/path`
@@ -161,13 +162,13 @@ AS SELECT * FROM temp_view_name ;
 
 ```
 
-### Write, overwrite and insert table
+### [Write, overwrite and insert table](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/2%20ETL%20with%20Spark%20SQL%20and%20Python/2.2%20Writing%20to%20Tables.sql)
 * `CREATE OR REPLACE TABLE` 
 * `INSERT OVERWRITE` : unlike the first, INSERT OVERWRITE can only be perform on an existing table and only if match the current schema 
 * `INSERT INTO` : Append data but you can insert the same records
 * `MERGE INTO` : WHEN MATCHED, WHEN NOT MATCHED, UPDATE SET + additional conditions 
 
-### Advanced transformations
+### [Advanced transformations](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/2%20ETL%20with%20Spark%20SQL%20and%20Python/2.3%20Advanced%20Transformations.sql)
 1) Colon syntax to travel nested data structure 
  `key:sub value:value`
 2) `from_json()`
@@ -238,4 +239,4 @@ Filter an array using a given lambda function
 
   -- NOTE: split() devide the string into multilple part according a given separator. And we take the second part of the email
   ```
-Input ex : rgoodier7m@skype.com => output : https://www.skype.com
+Ex : `rgoodier7m@skype.com` =>  `https://www.skype.com`
