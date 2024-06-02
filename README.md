@@ -241,9 +241,9 @@ Filter an array using a given lambda function
   ```
 Ex : `rgoodier7m@skype.com` =>  `https://www.skype.com`
 
-## IV. Incremental Data Processing
+## [IV. Incremental Data Processing](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/tree/main/3%20Incremental%20Data%20Processing)
 
-### Structured Streaming
+### [Structured Streaming](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/blob/main/3%20Incremental%20Data%20Processing/3.1%20Structured%20Streaming.py)
 It's any data source that grows over time from a new landing files in cloud storage, a database captured in a Change Data Capture (CDC) or events queued in pub/sub messaging feed like kafka
 
 2 Approaches for processing :
