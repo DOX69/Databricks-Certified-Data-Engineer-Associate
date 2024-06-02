@@ -11,16 +11,18 @@
 
 # COMMAND ----------
 
+from pyspark.sql.functions import *
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC
 # MAGIC ## Reading Stream
 
 # COMMAND ----------
 
-(spark.readStream
+books_streaming = spark.readStream\
       .table("books")
-      .createOrReplaceTempView("books_streaming_tmp_vw")
-)
 
 # COMMAND ----------
 
@@ -30,8 +32,7 @@
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT * FROM books_streaming_tmp_vw
+# books_streaming.display()
 
 # COMMAND ----------
 
@@ -40,10 +41,16 @@
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC SELECT author, count(book_id) AS total_books
-# MAGIC FROM books_streaming_tmp_vw
-# MAGIC GROUP BY author
+agg_books_streaming = books_streaming.groupBy("author")\
+    .agg(count("book_id").alias("total_books"))
+
+# COMMAND ----------
+
+# agg_books_streaming.display()
+
+# COMMAND ----------
+
+books_streaming.createOrReplaceTempView("books_streaming_tmp_vw")
 
 # COMMAND ----------
 
@@ -61,33 +68,28 @@
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC Error because sorting is not supporting
+
+# COMMAND ----------
+
+# MAGIC %md
 # MAGIC
 # MAGIC ## Persisting Streaming Data
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC CREATE OR REPLACE TEMP VIEW author_counts_tmp_vw AS (
-# MAGIC   SELECT author, count(book_id) AS total_books
-# MAGIC   FROM books_streaming_tmp_vw
-# MAGIC   GROUP BY author
-# MAGIC )
+agg_books_streaming.writeStream\
+      .trigger(processingTime='4 seconds')\
+      .outputMode("complete")\
+      .option("checkpointLocation", "dbfs:/mnt/demo/author_counts_checkpoint")\
+            .table("author_counts_streaming")
 
-# COMMAND ----------
-
-(spark.table("author_counts_tmp_vw")                               
-      .writeStream  
-      .trigger(processingTime='4 seconds')
-      .outputMode("complete")
-      .option("checkpointLocation", "dbfs:/mnt/demo/author_counts_checkpoint")
-      .table("author_counts")
-)
 
 # COMMAND ----------
 
 # MAGIC %sql
 # MAGIC SELECT *
-# MAGIC FROM author_counts
+# MAGIC FROM author_counts_streaming
 
 # COMMAND ----------
 
@@ -117,17 +119,25 @@
 
 # COMMAND ----------
 
-(spark.table("author_counts_tmp_vw")                               
-      .writeStream           
-      .trigger(availableNow=True)
-      .outputMode("complete")
-      .option("checkpointLocation", "dbfs:/mnt/demo/author_counts_checkpoint")
-      .table("author_counts")
-      .awaitTermination()
-)
+# MAGIC %md
+# MAGIC The query will process only new available data
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC In this case, we can use the awaitTermination method to block the execution of any cell in this notebook until the incremental batch's write has succeeded.
+
+# COMMAND ----------
+
+agg_books_streaming.writeStream\
+      .trigger(availableNow=True)\
+      .outputMode("complete")\
+      .option("checkpointLocation", "dbfs:/mnt/demo/author_counts_checkpoint")\
+            .table("author_counts_streaming").awaitTermination()
+
 
 # COMMAND ----------
 
 # MAGIC %sql
 # MAGIC SELECT *
-# MAGIC FROM author_counts
+# MAGIC FROM author_counts_streaming
