@@ -202,5 +202,40 @@ SELECT * FROM orders_updates
    )
    );
    ``` 
+### Higher Order functions
+Allow to work directly in an array object
+* FILTER
+Filter an array using a given lambda function
 
- 
+`FILTER(array_colomn,i -> i.array_colomn.column_name_in_array {+conditions}`
+
+* TRANSFORM
+  Apply a transformation on all items and extract the transformed value.
+  
+  Ex :
+  we have 
+  [{"book_id":"B09","quantity":2,"subtotal":48}]
+  ```
+  TRANSFORM (
+    books,
+    b -> CAST(b.subtotal * 0.8 AS INT)
+  )
+  ```
+  we get
+  [38]
+
+  ### SQL User Defined Functions UDFs
+  UDF functions leverage spark SQL directly maintaining all the optimization of Spark when applying logic to large datasets
+  ```
+  CREATE OR REPLACE FUNCTION function_name(optinal_parameter TYPE)
+  RETURNS type_to_be_return
+  RETURN some_logic ;
+
+  --EX :
+  CREATE OR REPLACE FUNCTION get_url(email STRING)
+  RETURNS STRING
+  RETURN concat("https://www.", split(email, "@")[1])
+
+  -- NOTE: split() devide the string into multilple part according a given separator. And we take the second part of the email
+  ```
+Input ex : rgoodier7m@skype.com => output : https://www.skype.com
