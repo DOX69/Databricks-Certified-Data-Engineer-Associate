@@ -160,3 +160,9 @@ CREATE TABLE table_name
 AS SELECT * FROM temp_view_name ;
 
 ```
+
+### Write, overwrite and insert table
+* `CREATE OR REPLACE TABLE` 
+* `INSERT OVERWRITE` : unlike the first, INSERT OVERWRITE can only be perform on an existing table and only if match the current schema 
+* `INSERT INTO` : Append data but you can insert the same records
+* `MERGE INTO` : WHEN MATCHED, WHEN NOT MATCHED, UPDATE SET additional conditions 
