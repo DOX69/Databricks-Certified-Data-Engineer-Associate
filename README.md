@@ -203,7 +203,7 @@ SELECT * FROM orders_updates
    )
    );
    ``` 
-### Higher Order functions
+### [Higher Order functions](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/2%20ETL%20with%20Spark%20SQL%20and%20Python/2.4%20Higher%20Order%20Functions%20and%20SQL%20UDFs.sql)
 Allow to work directly in an array object
 * FILTER
 Filter an array using a given lambda function
@@ -225,7 +225,7 @@ Filter an array using a given lambda function
   we get
   [38]
 
-  ### SQL User Defined Functions UDFs
+### [SQL User Defined Functions UDFs](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/2%20ETL%20with%20Spark%20SQL%20and%20Python/2.4%20Higher%20Order%20Functions%20and%20SQL%20UDFs.sql)
   UDF functions leverage spark SQL directly maintaining all the optimization of Spark when applying logic to large datasets
   ```
   CREATE OR REPLACE FUNCTION function_name(optinal_parameter TYPE)
