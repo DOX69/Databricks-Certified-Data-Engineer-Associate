@@ -38,7 +38,7 @@ Other option to explore and interact with file (and more), we have `dbutils.help
 
 -------------------
 
-## II. Databricks lakehouse plateform
+## [II. Databricks lakehouse plateform](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/tree/main/1%20Databricks%20lakehouse%20plateform)
 
 ### [Delta lake](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/1%20Databricks%20lakehouse%20plateform/1.2%20Understand%20delta%20lake.sql) [(And advance)](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/1%20Databricks%20lakehouse%20plateform/1.3%20Advanced%20Delta%20Lake%20Features.sql)
 it's an open source storage framework that brings reliability to data lakes(data inconsistency and performance issues. Enabling build lakehouse. Perform ACID
@@ -108,7 +108,7 @@ Constraints fall into two categories:
     </p>
   
 
-## III. ETL with Spark SQL and Python
+## [III. ETL with Spark SQL and Python](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/tree/main/2%20ETL%20with%20Spark%20SQL%20and%20Python)
 ### [Query files](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate-Preparation/blob/main/2%20ETL%20with%20Spark%20SQL%20and%20Python/2.1%20Querying%20Files.sql) 
 
 ```
@@ -240,3 +240,5 @@ Filter an array using a given lambda function
   -- NOTE: split() devide the string into multilple part according a given separator. And we take the second part of the email
   ```
 Ex : `rgoodier7m@skype.com` =>  `https://www.skype.com`
+
+## IV. 
