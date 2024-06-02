@@ -1,4 +1,4 @@
-# Databricks-Certified-Data-Engineer-Associate-Preparation
+# Databricks Certified Data Engineer Associate
 Preparation course for Databricks Data Engineer Associate certification exam with hands-on training
 ## I. Introduction
 ***What is databricks ?*** It's a lakehouse plateteform base on Apache Spark. Here is the architecture of databricks lakehouse:
@@ -251,6 +251,6 @@ It's any data source that grows over time from a new landing files in cloud stor
 * add last update >> Spark Structured Streaming : automaticaly identify new data
   A new row append to a table, that can be triggerd every min for ex
   <p align="center">
-   <img src="Assets/input streaming table.png">
+   <img src="Assets/input streaming table.png" height="250">
    </p>
 
