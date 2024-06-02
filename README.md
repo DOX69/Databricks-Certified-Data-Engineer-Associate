@@ -165,4 +165,42 @@ AS SELECT * FROM temp_view_name ;
 * `CREATE OR REPLACE TABLE` 
 * `INSERT OVERWRITE` : unlike the first, INSERT OVERWRITE can only be perform on an existing table and only if match the current schema 
 * `INSERT INTO` : Append data but you can insert the same records
-* `MERGE INTO` : WHEN MATCHED, WHEN NOT MATCHED, UPDATE SET additional conditions 
+* `MERGE INTO` : WHEN MATCHED, WHEN NOT MATCHED, UPDATE SET + additional conditions 
+
+### Advanced transformations
+1) Colon syntax to travel nested data structure 
+ `key:sub value:value`
+2) `from_json()`
+function to create a JSON format field. Adding an option `schema_of_json()`. This create a struct tipe and we can use period **'.'**
+3) `explode()` to explore an array. That allows us to put each element of an array on its own row.
+4) `Collect_set()` aggregation : collect unique value for a field
+5) `flatten()`[["B08"],["B09","B10"],["B08","B10"]] => ["B08","B09","B10","B08","B10"]
+6) `array_distinct()` ["B08","B09","B10","B08","B10"] => ["B08","B09","B10"]
+7) INTERSECTION/MINUS set operation return colomn found in both query
+```
+SELECT * FROM orders 
+INTERSECT 
+SELECT * FROM orders_updates 
+```
+8) PIVOT
+   `PIVOT ( [agg_function]() FOR subclause in ()`
+   Example (i.e. in the notebook associated)
+   ```
+   WITH cust_book_qtt AS(
+   SELECT
+    customer_id,
+    book.book_id AS book_id,
+    book.quantity AS quantity
+   FROM orders_enriched
+   where customer_id='C00004' )
+   
+   SELECT * FROM cust_book_qtt
+   PIVOT (
+   sum(quantity) FOR book_id in (
+    'B01', 'B02', 'B03', 'B04', 'B05', 'B06',
+    'B07', 'B08', 'B09', 'B10', 'B11', 'B12'
+   )
+   );
+   ``` 
+
+ 
