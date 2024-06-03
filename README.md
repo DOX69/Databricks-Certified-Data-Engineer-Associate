@@ -300,7 +300,9 @@ Ability data from new file since ast ingestion. Process only new file
 <p align = "center">
  <img src ="Assets/Medallion Architecture.png" height = "250">
 </p>
+
 ***Improve structure and quality of data as it flow to each layer***
+
  Benefits :
  * Simple data model
  * Enables incremental ETL
