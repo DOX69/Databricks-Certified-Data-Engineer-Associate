@@ -296,7 +296,7 @@ Ability data from new file since ast ingestion. Process only new file
   **Auto loader is recommend and best practice**
   
 
- ### Milti-hop Architecture or medallion Architecture
+ ### [Milti-hop Architecture or medallion Architecture](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/blob/main/3%20Incremental%20Data%20Processing/3.3%20Multi-Hop%20Architecture.py)
 <p align = "center">
  <img src ="Assets/Medallion Architecture.png" height = "250">
 </p>
