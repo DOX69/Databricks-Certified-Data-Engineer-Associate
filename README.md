@@ -277,7 +277,7 @@ It's any data source that grows over time from a new landing files in cloud stor
    * windowing
    * watermarking
 
-### Incremental data ingestion
+### [Incremental data ingestion](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/blob/main/3%20Incremental%20Data%20Processing/3.2%20Auto%20Loader.py)
 Ability data from new file since ast ingestion. Process only new file
 
 2 options mechanisms : 
@@ -285,12 +285,24 @@ Ability data from new file since ast ingestion. Process only new file
 * Thousands of files
 * less efficiant at scale
   
-2) Auto loader : Structured Streaming + checkpointing + fault tolerance
+2) [Auto loader](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/blob/main/3%20Incremental%20Data%20Processing/3.2%20Auto%20Loader.py) : Structured Streaming + checkpointing + fault tolerance
    
  => `readStream` & `writeStream`
+
 * Millions of files
 * Micro batches so efficient at scale
   
   It's infer automaticaly schema but we can specify a schema from a location.
   **Auto loader is recommend and best practice**
   
+
+ ### Milti-hop Architecture or medallion Architecture
+<p align = "center">
+ <img src ="Assets/Medallion Architecture.png" height = "250">
+</p>
+***Improve structure and quality of data as it flow to each layer***
+ Benefits :
+ * Simple data model
+ * Enables incremental ETL
+ * Combine strean and batch workloads in unified pipeline
+ * Recreate data from raw data at any time
