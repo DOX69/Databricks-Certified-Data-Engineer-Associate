@@ -276,3 +276,21 @@ It's any data source that grows over time from a new landing files in cloud stor
    **Advanced methods**
    * windowing
    * watermarking
+
+### Incremental data ingestion
+Ability data from new file since ast ingestion. Process only new file
+
+2 options mechanisms : 
+1) COPY INTO
+* Thousands of files
+* less efficiant at scale
+  
+2) Auto loader : Structured Streaming + checkpointing + fault tolerance
+   
+ => `readStream` & `writeStream`
+* Millions of files
+* Micro batches so efficient at scale
+  
+  It's infer automaticaly schema but we can specify a schema from a location.
+  **Auto loader is recommend and best practice**
+  
