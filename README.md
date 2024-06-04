@@ -308,3 +308,18 @@ Ability data from new file since ast ingestion. Process only new file
  * Enables incremental ETL
  * Combine strean and batch workloads in unified pipeline
  * Recreate data from raw data at any time
+
+## V.Production Pipelines
+
+### Delta Live Tables
+For creating data processing pipeline
+`CREATE OR REFRESH STREAMING LIVE TABLE table_name AS SELET * FROM cloud_files()`
+
+Pipeline mode :
+* Triggerd : run once until the next manual or schedule update
+* Continious : keep running until and ingesting data as it arrive
+
+A new cluster will be created for the new DLT pipeline. Here the [cluster mode](https://learn.microsoft.com/fr-fr/azure/databricks/delta-live-tables/auto-scaling) :
+* Fixed size (if 0 => sigle node cluster)
+* Enhance autoscaling
+* Legacy autoscaling
