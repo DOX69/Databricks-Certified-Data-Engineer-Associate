@@ -309,9 +309,9 @@ Ability data from new file since ast ingestion. Process only new file
  * Combine strean and batch workloads in unified pipeline
  * Recreate data from raw data at any time
 
-## V.Production Pipelines
+## [V. Production Pipelines](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/tree/main/4%20Production%20Pipelines)
 
-### Delta Live Tables
+### [Delta Live Tables](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/blob/main/4%20Production%20Pipelines/4.1%20Delta%20Live%20Tables.sql)
 For creating data processing pipeline
 `CREATE OR REFRESH STREAMING LIVE TABLE table_name AS SELET * FROM cloud_files()`
 
@@ -320,7 +320,7 @@ Pipeline mode :
 * Continious : keep running until and ingesting data as it arrive
 
 A new cluster will be created for the new DLT pipeline. Here the [cluster mode](https://learn.microsoft.com/fr-fr/azure/databricks/delta-live-tables/auto-scaling) :
-* Fixed size (if 0 => sigle node cluster)
+* Fixed size (if 0 => single node cluster)
 * Enhance autoscaling
 * Legacy autoscaling
 
