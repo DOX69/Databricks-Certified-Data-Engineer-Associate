@@ -323,3 +323,16 @@ A new cluster will be created for the new DLT pipeline. Here the [cluster mode](
 * Fixed size (if 0 => sigle node cluster)
 * Enhance autoscaling
 * Legacy autoscaling
+
+<p align ="center">
+<img src ="Assets/DLT.png" height="350">
+</p>
+
+Can have a data quality section thanks to **CONSTRAINTS** statment.the flow can own data expectation declared :
+
+<p align="center">
+<img src="Assets/DLT quality.png" height="300">
+</p>
+
+
+
