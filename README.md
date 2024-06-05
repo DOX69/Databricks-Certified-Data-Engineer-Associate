@@ -345,6 +345,7 @@ Can have a data quality section thanks to **CONSTRAINTS** statment.the flow can 
 **Advantages** :
 * can process late-arriving record using the sequencing key
 * Can specify one or many premary key
+* Unlike merge, we can DELETE using `APPLY AS DELETE WHEN row_status = "DELETE"`
 * support Slow Data capture (SCD) type 1 (one row for a key)
 
 **Desadvantage** :
