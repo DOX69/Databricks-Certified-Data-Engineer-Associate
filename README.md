@@ -334,5 +334,19 @@ Can have a data quality section thanks to **CONSTRAINTS** statment.the flow can 
 <img src="Assets/DLT quality.png" height="300">
 </p>
 
+### Change data capture (CDC)
 
+**What is a CDC** ? process of identify changes (INSERT, DELETE, UPDATE) from source and apply to the target : CDC feed => target table
+
+<p align="center">
+<img src="Assets/CDC with DLT.png" height="300">
+</p>
+
+**Advantages** :
+* can process late-arriving record using the sequencing key
+* Can specify one or many premary key
+* support Slow Data capture (SCD) type 1 (one row for a key)
+
+**Desadvantage** :
+* Break append only requirements for streaming table sources => cannot perform streaming queries on the table (can't be a streaming source)
 
