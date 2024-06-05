@@ -334,8 +334,7 @@ Can have a data quality section thanks to **CONSTRAINTS** statment.the flow can 
 <img src="Assets/DLT quality.png" height="300">
 </p>
 
-### Change data capture (CDC)
-
+### [Change data capture (CDC)](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/blob/main/4%20Production%20Pipelines/4.1.2%20Books%20Pipeline.sql)
 **What is a CDC** ? process of identify changes (INSERT, DELETE, UPDATE) from source and apply to the target : CDC feed => target table
 
 <p align="center">
