@@ -366,6 +366,31 @@ DBSQL, is a data warehouse allows you to run all your SQL and BI applications at
 
 New options like SQL editor, Queries, Dashboards, Alerts.
 * Dashboard :
+  
 <p align="center">
-<img src="Assets/Dashbords.png" height="300">
+<img src="Assets/Dashboard.png" height="500">
 </p>
+
+## VI. Data gouvernance
+### Data object privileges
+
+`GRANT` Privilege `ON` Object *Object_name* TO *user or group*
+No matter if it's a manage or external table
+
+<h3 align="center" class="heading-element" dir="auto">
+<td><img src="Assets/Privileges.png" height="170"></a></td>
+<td><img src="Assets/Data objects.png" height="170"></a></td>
+</h3>
+
+To grant privileges, need to be:
+* A data administrator : all objects in the catalog and underlying in the catalog
+* Catalog owner : All objects in the catalog
+* Database owner : All database
+* Table owner : only table
+  
+<p align="center">
+<img src="Assets/Architecture data catalog.png" height="200">
+</p>
+
+**More operations**
+`Grant DENY REVOKE SHOW GRANTS`
