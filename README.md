@@ -350,3 +350,15 @@ Can have a data quality section thanks to **CONSTRAINTS** statment.the flow can 
 **Desadvantage** :
 * Break append only requirements for streaming table sources => cannot perform streaming queries on the table (can't be a streaming source)
 
+### Jobs
+Databricks allows you to schedule one or multiple tasks as part of a job. Can orchestrate notebook, DLT, SQL,dbt, JAR...
+<p align="center">
+<img src="Assets/workflow jobs.png" height="300">
+</p>
+Make dependencies and schedule using the interface or the CRON syntax
+
+You can manage permission and send notification by email
+
+**In case of a falure** : you can repair the run by clicking on the "Repair run" bottom >> **Rerun only the failed task**
+
+### SQL in Databricks
