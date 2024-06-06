@@ -372,7 +372,7 @@ New options like SQL editor, Queries, Dashboards, Alerts.
 </p>
 
 ## VI. Data gouvernance
-### Data object privileges
+### [Data object privileges](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/blob/main/5%20Data%20Governance/5.1%20-%20Managing%20Permissions.sql)
 
 `GRANT` Privilege `ON` Object *Object_name* TO *user or group*
 No matter if it's a manage or external table
