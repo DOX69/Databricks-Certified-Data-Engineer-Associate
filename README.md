@@ -362,3 +362,10 @@ You can manage permission and send notification by email
 **In case of a falure** : you can repair the run by clicking on the "Repair run" bottom >> **Rerun only the failed task**
 
 ### SQL in Databricks
+DBSQL, is a data warehouse allows you to run all your SQL and BI applications at scale and with a unified governance model. We can create **SQL warehouse** is the compute power of Databricks SQL. It is a SQL engine or endpoint **based on Spark cluster**.
+
+New options like SQL editor, Queries, Dashboards, Alerts.
+* Dashboard :
+<p align="center">
+<img src="Assets/Dashbords.png" height="300">
+</p>
