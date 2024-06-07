@@ -415,3 +415,19 @@ It unifies governance for all data and AI assets in your Lakehouse including fil
 Metastores are likewise separated out of the workspace and managed through the account console where they can be assigned to the workspaces.
 
 Introduting **3rd level namespace 'catalog'** : `FROM catalog.schema.table`
+
+**UC hierarchy**
+
+<p align="center">
+<img src="Assets/UC hierarchy.png" height="300">
+</p>
+
+*Don't confuse Unity Catalog metastore with the Hive metastore.* The Hive metastore is the default metastore linked to each databricks workspace. And while it may seem functionally similar to a Unity catalog metastore, Unity Catalog metastores
+
+Unity Catalog metastore can have as many catalog as desired.
+
+* Strategic Credentials apply to an entire storage container.
+
+* On the other hand, External Locations represent the storage directories within a cloud storage container.
+
+* In addition, Unity Catalog adds Shares and Recipients which are related to Delta Sharing.
