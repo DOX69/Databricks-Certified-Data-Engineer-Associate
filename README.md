@@ -388,10 +388,17 @@ To grant privileges, need to be:
 * Database owner : All database
 * Table owner : only table
 
-  ### Unity Catalog
 <p align="center">
 <img src="Assets/Architecture data catalog.png" height="200">
 </p>
 
 **More operations**
 `Grant DENY REVOKE SHOW GRANTS`
+
+### Unity Catalog
+
+**What is a unity catalog or UC ?** 
+
+A **centralized governance solution across** all your workspaces on any cloud.
+It unifies governance for all data and AI assets in your Lakehouse including files, tables, ML models and dashboards. And these can be simply achieved using SQL language.
+
