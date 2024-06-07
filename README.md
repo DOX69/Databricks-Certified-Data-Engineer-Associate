@@ -387,7 +387,8 @@ To grant privileges, need to be:
 * Catalog owner : All objects in the catalog
 * Database owner : All database
 * Table owner : only table
-  
+
+  ### Unity Catalog
 <p align="center">
 <img src="Assets/Architecture data catalog.png" height="200">
 </p>
