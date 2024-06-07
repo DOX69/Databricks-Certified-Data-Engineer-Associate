@@ -402,3 +402,16 @@ To grant privileges, need to be:
 A **centralized governance solution across** all your workspaces on any cloud.
 It unifies governance for all data and AI assets in your Lakehouse including files, tables, ML models and dashboards. And these can be simply achieved using SQL language.
 
+**BEFORE AND AFTER**
+
+<p align="center">
+<img src="Assets/Before and after unity catalog.png" height="300">
+</p>
+
+* Before Unity Catalog, users and groups were defining per workspace. Also,**access control was managed via the Hive metastore** within the workspace.
+
+* By contrast, Unity Catalog sits out of the workspace and accessed via a user interface called the Account Console. Users and the groups for Unity Catalog are managed through this account console and assign it to one or more workspaces.
+
+Metastores are likewise separated out of the workspace and managed through the account console where they can be assigned to the workspaces.
+
+Introduting **3rd level namespace 'catalog'** : `FROM catalog.schema.table`
