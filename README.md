@@ -431,3 +431,13 @@ Unity Catalog metastore can have as many catalog as desired.
 * On the other hand, External Locations represent the storage directories within a cloud storage container.
 
 * In addition, Unity Catalog adds Shares and Recipients which are related to Delta Sharing.
+
+**Three types of identities** 
+* Users : identified by e mail
+* service Principles (principes de service) : identified by Application IDs
+* Group users
+
+There identities exist at 2 lvl : Account-level and workspace-level. Unity Catalog supports a feature called **Identity Federation**, where identities are simply created once
+So Identity Federation **eliminates the need to manually create and maintain copies** of identities at workspace-levels
+
+**Priviliges**
