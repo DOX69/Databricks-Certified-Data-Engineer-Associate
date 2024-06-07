@@ -441,3 +441,21 @@ There identities exist at 2 lvl : Account-level and workspace-level. Unity Catal
 So Identity Federation **eliminates the need to manually create and maintain copies** of identities at workspace-levels
 
 **Priviliges**
+Unity Catalog has CREAT, USAGE, SELECT and MODIFY privileges.
+
+In addition, we have also privileges related to the underlying storage which are READ FILES and WRITE FILES which replace the ANY FILE privilege we saw previously with Hive metastore.
+
+Lastly, we have EXECUTE privilege to allow executing user defined functions. So putting all together, we can see here the security model of Unity catalog.
+
+**Putting all together with GRANT:**
+
+<p align="center">
+<img src="Assets/security model.png" height="300">
+</p>
+
+
+**More Features**
+
+In addition to its centralized governance model, Unity Catalog also has a built-in data search and
+
+discovery (AI). And also provides automated lineage where you can identify the origin of your data and where it is used across all data types like tables, notebooks, workflows and dashboards.
