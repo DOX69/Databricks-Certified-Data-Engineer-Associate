@@ -459,3 +459,11 @@ Lastly, we have EXECUTE privilege to allow executing user defined functions. So 
 In addition to its centralized governance model, Unity Catalog also has a built-in data search and
 
 discovery (AI). And also provides automated lineage where you can identify the origin of your data and where it is used across all data types like tables, notebooks, workflows and dashboards.
+
+## VII. Point of attention to revise :
+
+* [Repos](https://docs.databricks.com/en/repos/index.html)
+* [CONSTRAINT](https://learn.microsoft.com/en-us/azure/databricks/delta-live-tables/expectations#--fail-on-invalid-records) + [UDEMY](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34671142/?referralCode=F0FA48E9A0546C975F14#overview)
+* INSERT INTO / COPY INTO /
+* [DLT pipeline]( https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-incremental-data.html#streaming-from-other-datasets-within-a-pipeline&language-sql) + [UDEMY](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34671142/?referralCode=F0FA48E9A0546C975F14#overview)
+* [All GRANT permission](https://docs.databricks.com/security/access-control/table-acls/object-privileges.html#privileges) **Data grouvernance ** [lecture](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34779100/?referralCode=F0FA48E9A0546C975F14#overview)
