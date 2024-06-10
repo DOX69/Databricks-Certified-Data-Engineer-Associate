@@ -463,7 +463,32 @@ discovery (AI). And also provides automated lineage where you can identify the o
 ## VII. Point of attention to revise :
 
 * [Repos](https://docs.databricks.com/en/repos/index.html)
-* [CONSTRAINT](https://learn.microsoft.com/en-us/azure/databricks/delta-live-tables/expectations#--fail-on-invalid-records) + [UDEMY](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34671142/?referralCode=F0FA48E9A0546C975F14#overview)
+  ***What can you do with Databricks Git folders?***
+ > Clone, push to, and pull from a remote Git repository.
+
+ > Create and manage branches for development work, including merging, rebasing, and resolving conflicts.
+
+ > Create notebooks (including IPYNB notebooks) and edit them and other files.
+
+ > Visually compare differences upon commit and resolve merge conflicts.
+
+***Git provider***
+
+Cloud Git providers :
+  * GitHub, GitHub AE, and GitHub Enterprise Cloud
+  * Atlassian BitBucket Cloud
+  * GitLab and GitLab EE
+  * Microsoft Azure DevOps (Azure Repos)
+  * AWS CodeCommit
+    
+On-premises Git providers :
+  * GitHub Enterprise Server
+  * Atlassian BitBucket Server and Data Center
+  * GitLab Self-Managed
+  * Microsoft Azure DevOps Server
+
+
+* [**CONSTRAINT**](https://learn.microsoft.com/en-us/azure/databricks/delta-live-tables/expectations#--fail-on-invalid-records) + [UDEMY](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34671142/?referralCode=F0FA48E9A0546C975F14#overview)
 * INSERT INTO / COPY INTO /
 * [DLT pipeline]( https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-incremental-data.html#streaming-from-other-datasets-within-a-pipeline&language-sql) + [UDEMY](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34671142/?referralCode=F0FA48E9A0546C975F14#overview)
 * [All GRANT permission](https://docs.databricks.com/security/access-control/table-acls/object-privileges.html#privileges) **Data grouvernance ** [lecture](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34779100/?referralCode=F0FA48E9A0546C975F14#overview)
