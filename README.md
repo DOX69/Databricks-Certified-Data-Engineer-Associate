@@ -8,12 +8,13 @@ Preparation course for Databricks Data Engineer Associate certification exam wit
 <td><a target="_blank" rel="noopener noreferrer" href="https://www.databricks.com/en-website-assets/static/8d7550df77b7f3adc86525f1321535d5/22598.pngg"><img src="https://www.databricks.com/en-website-assets/static/8d7550df77b7f3adc86525f1321535d5/22598.png" title="Databricks" alt="Databricks" height=300" ;"></a></td>
 </h3>
 
-***What is a lakehouse ?*** An unified plateform that combine benefits of datalake and data warehouse.
+***What is a lakehouse ?*** An unified plateform that combine benefits of datalake and data warehouse. Sits on top of datalake
 
+***Key features of delta format*** : ACID, scalable metadata, time travel, unified batch and streaming, DML operations
 
 || `DATALAKE`| `DATA WAREHOUSE` |
 ----------- |----------- | ----------- | 
-| **`LAKEHOUSE`** | <li> Open </li> <li> Flexible </li> <li> ML support </li>  | <li> Reliable </li>  <li> Strong gouvernance </li> <li> Performance </li>| 
+| **`LAKEHOUSE`** | <li> Open </li> <li> Flexible </li> <li> semi structured & unstructured</li> <li> ML support </li>   | <li> Reliable ACID </li>  <li> Strong gouvernance </li> <li>structured</li>  <li> Performance </li>| 
 
 ***How databricks ressources are deploy?*** 2 Layers :
 | `Control plan` | `Data plane` |
