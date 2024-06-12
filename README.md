@@ -383,6 +383,8 @@ No matter if it's a manage or external table
 <td><img src="Assets/Data objects.png" height="170"></a></td>
 </h3>
 
+There is NO view privilege, USAGE is the privilege to see object
+
 To grant privileges, need to be:
 * A data administrator : all objects in the catalog and underlying in the catalog
 * Catalog owner : All objects in the catalog
