@@ -242,6 +242,8 @@ Filter an array using a given lambda function
   ```
 Ex : `rgoodier7m@skype.com` =>  `https://www.skype.com`
 
+[SQL UDFs](https://www.databricks.com/blog/2021/10/20/introducing-sql-user-defined-functions.html)
+
 ## [IV. Incremental Data Processing](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/tree/main/3%20Incremental%20Data%20Processing)
 
 ### [Structured Streaming](https://github.com/DOX69/Databricks-Certified-Data-Engineer-Associate/blob/main/3%20Incremental%20Data%20Processing/3.1%20Structured%20Streaming.py)
