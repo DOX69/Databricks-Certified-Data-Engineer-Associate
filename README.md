@@ -497,3 +497,5 @@ On-premises Git providers :
 * INSERT INTO / COPY INTO /
 * [DLT pipeline]( https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-incremental-data.html#streaming-from-other-datasets-within-a-pipeline&language-sql) + [UDEMY](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34671142/?referralCode=F0FA48E9A0546C975F14#overview)
 * [All GRANT permission](https://docs.databricks.com/security/access-control/table-acls/object-privileges.html#privileges) **Data grouvernance ** [lecture](https://www.udemy.com/course/databricks-certified-data-engineer-associate/learn/lecture/34779100/?referralCode=F0FA48E9A0546C975F14#overview)
+
+* Examen data engineer le 22 juin 
